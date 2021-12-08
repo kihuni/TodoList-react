@@ -1,11 +1,11 @@
 import React from 'react'
 import Button from './Button'
 
-const Header = () => {
+const Header = ({onAdd}) => {
     return (
         <div className ="header">
             <h1>Simple Todo list</h1>
-           <Button color= {"grey"} text="addTask"/>
+           <Button color= {"green"} text="addTask" onClick ={onAdd}/>
         </div>
     )
 }

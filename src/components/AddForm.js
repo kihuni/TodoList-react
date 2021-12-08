@@ -5,42 +5,42 @@ import { useState } from "react"
 const AddForm = ({onAdd}) => {
 
  
-     const [addTask, setAddTask] = useState('')
-     const [addday, setAddDay] = useState('')
-     const [ addTime, setAddTime] = useState('')
+     const [project, setProject] = useState('')
+     const [Day, setDay] = useState('')
+     const [Time, setTime] = useState('')
      const[ reminder, setReminder ] = useState(false)
 
      const onSubmit = (e)=>{
         e.preventDefault()
 
-        if(!addTask){
+        if(!project){
             alert("please add project")
             return
         }
-        onAdd({addTask, addday,addTime,reminder})
+        onAdd({project,Day,Time,reminder})
 
-        setAddTask('')
-        setAddDay('')
-        setAddTime('')
-        setReminder(true)
+        setProject('')
+        setDay('')
+        setTime('')
+        setReminder(false)
     }
     return (
         <form className= "add-form" onSubmit ={onSubmit}>
           <div className ="form-control">
             <label >AddTask</label>
-            <input type="text" value ={addTask} placeholder = "addTask" onChange={(e) => setAddTask(e.target.value )}/> 
+            <input type="text"  placeholder = "addTask" value ={project} onChange={(e) => setProject(e.target.value )}/> 
           </div>  
           <div className = "form-control">
             <label>AddDay</label>
-            <input type="text" value = {addday} placeholder = "addDay" onChange={(e) => setAddDay(e.target.value )}/> 
+            <input type="text"  placeholder = "addDay" value = {Day} onChange={(e) => setDay(e.target.value )}/> 
           </div> 
           <div className = "form-control">
             <label>AddTime</label>
-            <input type="text" value ={addTime} placeholder = "addTime" onChange={(e) => setAddTime(e.target.value )}/> 
+            <input type="text" placeholder = "Time" value ={Time}  onChange={(e) => setTime(e.target.value )}/> 
           </div> 
           <div className = "form-control" className= "form-control-check" >
                 <label>Set Reminder</label>
-                <input type="checkbox" value = {reminder} checked ={reminder} onChange={(e) => setReminder(e.currentTarget.checked )}/>
+                <input type="checkbox" checked ={reminder} value = {reminder}  onChange={(e) => setReminder(e.currentTarget.checked )}/>
             </div>
             
         <input type="submit"  value ="save-task" className ="btn btn-block"/>
