@@ -38,9 +38,9 @@ const AddForm = ({onAdd}) => {
             <label>AddTime</label>
             <input type="text" placeholder = "Time" value ={Time}  onChange={(e) => setTime(e.target.value )}/> 
           </div> 
-          <div className = "form-control" className= "form-control-check" >
+          <div className = 'form-control form-control-check'>
                 <label>Set Reminder</label>
-                <input type="checkbox" checked ={reminder} value = {reminder}  onChange={(e) => setReminder(e.currentTarget.checked )}/>
+                <input className="set-tick" type="checkbox" checked ={reminder} value = {reminder}  onChange={(e) => setReminder(e.currentTarget.checked )}/>
             </div>
             
         <input type="submit"  value ="save-task" className ="btn btn-block"/>

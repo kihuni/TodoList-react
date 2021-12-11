@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import AddForm from "./components/AddForm";
 
 function App() {
-  const [showAddTask, setShowAddTask] = useState(true)
    
   const[tasks, setAddTask] = useState([
     {
@@ -52,8 +51,8 @@ function App() {
   return (
    
   <div className="container">
-    <Header onAdd1 = {() => setShowAddTask(!showAddTask)}/>
-    {showAddTask && <AddForm  onAdd = {addItems}/>}
+    <Header />
+     <AddForm  onAdd = {addItems}/>
 { tasks.length > 0 ? (<Tasks tasks = {tasks} onRemove = {deleteItem} onToggle ={toggleReminder}/>): ("No Item To Display")  }
     </div>
   );
